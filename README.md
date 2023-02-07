@@ -7,7 +7,9 @@ The **objective** of this project is to visualise multiple states of machines us
 * In browser recording of sound
 * Multiple dimensionality reduction techniques to better visualise overlap or seperation between the states.
 
-#### Best suited for:
+#### Best suited for:![Screenshot from 2023-02-07 18-29-04](https://user-images.githubusercontent.com/27016398/217251456-805d62d8-2d3f-4283-b9e8-80896f82f028.png)![Screenshot from 2023-02-07 18-29-04](https://user-images.githubusercontent.com/27016398/217251489-afad51d1-af1e-4007-adcb-cfbf6604ffe9.png)
+
+
 * Non human sounds, speechs etc and primarily machine sounds.
 
 #### Folder and file structure
@@ -23,3 +25,8 @@ The **objective** of this project is to visualise multiple states of machines us
 #### Dimensionality reduction:
 1. Presently through: PCA and t-SNE
 2. Proposed: UNET
+
+
+#### Screen shots of the app
+![Screenshot One](https://user-images.githubusercontent.com/27016398/217246273-fadfaf0b-f649-4b1b-b206-b0bd18baef76.png)
+![Screenshot Two](https://user-images.githubusercontent.com/27016398/217251536-9f42f8c0-d9b4-4b7d-bbbc-dc271ec2d75f.png)
