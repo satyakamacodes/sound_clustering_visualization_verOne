@@ -1,4 +1,4 @@
-# Machine's State Identification from Audio
+# Machine States Identification from Audio
 The **objective** of this project is to visualise multiple states of machines using the audio emitted by each of the states. Here, by states, we loosely refer to the conditions of the machine such as GOOD vs. MALFUNCTIONING; BRAND NEW vs. WORKS DECENTLY vs.DILIAPIDATED etc.
 #### Possible Use Cases: 
 * In an industrail setting where you quickly need to compare if one machine is functioning as good as another.
