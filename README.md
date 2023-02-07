@@ -7,9 +7,7 @@ The **objective** of this project is to visualise multiple states of machines us
 * In browser recording of sound
 * Multiple dimensionality reduction techniques to better visualise overlap or seperation between the states.
 
-#### Best suited for:![Screenshot from 2023-02-07 18-29-04](https://user-images.githubusercontent.com/27016398/217251456-805d62d8-2d3f-4283-b9e8-80896f82f028.png)![Screenshot from 2023-02-07 18-29-04](https://user-images.githubusercontent.com/27016398/217251489-afad51d1-af1e-4007-adcb-cfbf6604ffe9.png)
-
-
+#### Best suited for:
 * Non human sounds, speechs etc and primarily machine sounds.
 
 #### Folder and file structure
