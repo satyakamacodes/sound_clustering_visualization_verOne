@@ -1,6 +1,7 @@
 import json
+import streamlit as st
 
-
+@st.cache()
 def load_lottiefile(filepath: str) ->json:
     '''
     Objective: The objective of this fn. is to load a lottie animation (json) file 
