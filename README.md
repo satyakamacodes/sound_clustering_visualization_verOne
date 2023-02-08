@@ -20,11 +20,47 @@ The **objective** of this project is to visualise multiple states of machines us
 1. MFE
 2. Proposed - SPectral Grating
 
-#### Dimensionality reduction:
+#### Dimensionality reduction
 1. Presently through: PCA and t-SNE
 2. Proposed: UNET
 
+#### Logical flow
 
+```
+title
+    |
+    |---how many types of machine states
+        |
+        |---2
+        |   |
+        |   |---NORMAL vs FAULTY
+        |   |---NORMAL, FAULTY, EXTREMELY_FAULTY  ------|
+        |                                               | 
+        |---specify sampling rate                       |
+        |---specify duration                            |
+                    |                                   |
+                    |                                   |
+                    |-----------------------------------|
+                                                        |
+                                                        |--- Saving files of each class
+                                                             |----Calculating
+                                                                   |----MFCC
+                                                                   |----MFE
+                                                                   |----Spectral Grating
+                                                                        |
+                                                                        |---Dimensionality reduction using:
+                                                                                |--- PCA
+                                                                                |--- tSNE
+                                                                                |----UMAP
+                                                                                        |
+                                                                                        |-- Visualization
+                                                                                                |---- 2D Scatter
+                                                                                                |---- 3D Scatter
+                                                                                
+                                                        |
+
+            
+```
 #### Screen shots of the app
 ![Screenshot One](https://user-images.githubusercontent.com/27016398/217246273-fadfaf0b-f649-4b1b-b206-b0bd18baef76.png)
 ![Screenshot Two](https://user-images.githubusercontent.com/27016398/217251536-9f42f8c0-d9b4-4b7d-bbbc-dc271ec2d75f.png)
