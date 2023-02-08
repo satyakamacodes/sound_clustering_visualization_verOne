@@ -1,5 +1,11 @@
 # Machine States Identification from Audio
 The **objective** of this project is to visualise multiple states of machines using the audio emitted by each of the states. Here, by states, we loosely refer to the conditions of the machine such as GOOD vs. MALFUNCTIONING; BRAND NEW vs. WORKS DECENTLY vs.DILIAPIDATED etc.
+
+#### App available at:
+
+![APP](https://seeklogo.com/images/S/streamlit-logo-1A3B208AE4-seeklogo.com.png)[(Streamlit)](https://satyakamacodes-sound-clustering-visualization-veron-main-l1ikjz.streamlit.app/)
+
+
 #### Possible Use Cases: 
 * In an industrail setting where you quickly need to compare if one machine is functioning as good as another.
 
