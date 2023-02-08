@@ -158,6 +158,8 @@ total_size = 0
 for folder_path in folder_paths:
     total_size += get_folder_vloume.get_total_size(folder_path)
 
+    
+
 
 # This is ROW TWO
 left_col_rowTwo, first_mid_col_rowTwo, second_right_col_rowTwo, right_col_rowTwo = st.columns(4, gap = 'medium')
