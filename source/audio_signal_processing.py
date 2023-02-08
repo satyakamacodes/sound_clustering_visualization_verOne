@@ -19,18 +19,17 @@ def process_signal_PCA(filename:str):
     segment_ends = segment_starts + segment_length
     segments = [y[start:end] for start, end in zip(segment_starts, segment_ends)]
 
-    # Calculate the MFCCs for each segment
-    # mfccs = [librosa.feature.mfcc(y=segment, sr=sr, n_mfcc=40) for segment in segments]
-    mfccs = [librosa.feature.melspectrogram(y=segment, sr=sr) for segment in segments]
+    # Calculate the MFEs for each segment
+    MFEs = [librosa.feature.melspectrogram(y=segment, sr=sr) for segment in segments]
 
     # Stack the MFCC arrays into a single array
-    mfcc_stack = np.stack(mfccs)
+    MFEs_stack = np.stack(MFEs)
 
     # Reduce the dimensionality of the MFCCs using PCA
     pca = PCA(n_components=2)
-    mfcc_pca = pca.fit_transform(mfcc_stack.reshape(-1, 40))
+    MFEs_pca = pca.fit_transform(MFEs_stack.reshape(-1, 40))
 
-    return mfcc_pca
+    return MFEs_pca
 
 @st.cache()
 def process_signal_tSNE(filename:str):
@@ -44,17 +43,15 @@ def process_signal_tSNE(filename:str):
     segment_ends = segment_starts + segment_length
     segments = [y[start:end] for start, end in zip(segment_starts, segment_ends)]
 
-    # Calculate the MFCCs for each segment
-    # mfccs = [librosa.feature.mfcc(y=segment, sr=sr, n_mfcc=40) for segment in segments]
-    mfccs = [librosa.feature.melspectrogram(y=segment, sr=sr) for segment in segments]
+    MFEs = [librosa.feature.melspectrogram(y=segment, sr=sr) for segment in segments]
 
     # Stack the MFCC arrays into a single array
-    mfcc_stack = np.stack(mfccs)
+    MFEs_stack = np.stack(MFEs)
 
     # Reduce the dimensionality of the MFCCs using t-SNE
     tsne = TSNE(n_components=2)
-    mfcc_tsne = tsne.fit_transform(mfcc_stack.reshape(-1, 40))
+    MFEs_tsne = tsne.fit_transform(MFEs_stack.reshape(-1, 40))
 
-    return mfcc_tsne
+    return MFEs_stack
 
 

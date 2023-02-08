@@ -2,6 +2,7 @@ import streamlit as st
 from audio_recorder_streamlit import audio_recorder
 from source import audio_signal_processing
 from source import lottie_animation
+from source import rand_no_gen
 from streamlit_lottie import st_lottie
 
 import collections
@@ -38,6 +39,10 @@ st.title("Machine State's Visualization using :sound:")
 
 text = '<p style="font-family:Roboto; color:#fff; font-size: 20px;">This app helps you collect audio data of <b>various states</b> of your machine, in-browser and visualize their similarity/dissimilarity using interactive plots. </p>'
 st.markdown(text, unsafe_allow_html=True)
+
+
+USER_ID = rand_no_gen.generate_16_digit_number()
+st.text(USER_ID)
 
 
 left_col_rowOne, mid_col_rowOne, right_col_rowOne = st.columns(3, gap = 'medium')
@@ -146,12 +151,14 @@ with right_col_rowOne:
     pick_SR = int(pick_SR)
 
 count_no_of_wav_files = len([f for f in os.listdir('./recordings_two_class/') if f.endswith('.wav')]) + len([f for f in os.listdir('./recordings_three_class/') if f.endswith('.wav')])
-# st.write(count_no_of_wav_files)
-if count_no_of_wav_files >0:
-    text = '<p style="font-family:Roboto; color:yellow; font-size: 20px;"><b>There are files saved from previous sessions. Scroll to the bottom of the page to delete them and then execute the app</b>: </p>'
+
+left_col_rowTwo, mid_col_rowTwo, right_col_rowTwo = st.columns(3, gap = 'medium')
+
+with mid_col_rowTwo:
+    text = '<div style="background-color: black; border-radius: 10px; padding: 14px; border: 2px solid red; font-family:Roboto; color:white; font-size: 24px; text-align: center;">Number of files saved till date: <b>' + str(count_no_of_wav_files) + '</b> </div>'
     st.markdown(text, unsafe_allow_html=True)
-else:
-    pass
+
+
 
 # This is ROW TWO
 if no_of_classes == 2:
@@ -322,39 +329,39 @@ if no_of_classes ==3:
         key = "lottie5"
     )
 
-left_col_rowFour, mid_col_rowFour, right_col_rowFour = st.columns(3, gap = 'medium')
-with mid_col_rowFour:
-    if st.button("Delete all audio files"):
-        # # Deleting al files from any previous session in both the recordings folders
-        folder_to_del_twoClass = './recordings_two_class/'
-        for filename in os.listdir(folder_to_del_twoClass):
-            file_path = os.path.join(folder_to_del_twoClass, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-                    st.info("Button pressed! Running code block...")
-            except Exception as e:
-                st.write('Failed to delete %s. Reason: %s' % (file_path, e))
+# left_col_rowFour, mid_col_rowFour, right_col_rowFour = st.columns(3, gap = 'medium')
+# with mid_col_rowFour:
+#     if st.button("Delete all audio files"):
+#         # # Deleting al files from any previous session in both the recordings folders
+#         folder_to_del_twoClass = './recordings_two_class/'
+#         for filename in os.listdir(folder_to_del_twoClass):
+#             file_path = os.path.join(folder_to_del_twoClass, filename)
+#             try:
+#                 if os.path.isfile(file_path) or os.path.islink(file_path):
+#                     os.unlink(file_path)
+#                 elif os.path.isdir(file_path):
+#                     shutil.rmtree(file_path)
+#                     st.info("Button pressed! Running code block...")
+#             except Exception as e:
+#                 st.write('Failed to delete %s. Reason: %s' % (file_path, e))
 
-        folder_to_del_threeClass = './recordings_three_class/'
-        for filename in os.listdir(folder_to_del_threeClass):
-            file_path = os.path.join(folder_to_del_threeClass, filename)
-            try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-                    st.info("Button pressed! Running code block...")
-            except Exception as e:
-                st.write('Failed to delete %s. Reason: %s' % (file_path, e))
+#         folder_to_del_threeClass = './recordings_three_class/'
+#         for filename in os.listdir(folder_to_del_threeClass):
+#             file_path = os.path.join(folder_to_del_threeClass, filename)
+#             try:
+#                 if os.path.isfile(file_path) or os.path.islink(file_path):
+#                     os.unlink(file_path)
+#                 elif os.path.isdir(file_path):
+#                     shutil.rmtree(file_path)
+#                     st.info("Button pressed! Running code block...")
+#             except Exception as e:
+#                 st.write('Failed to delete %s. Reason: %s' % (file_path, e))
 
 
     
 
 
-left_col_rowFour, mid_col_rowFour, right_col_rowFour = st.columns(3, gap = 'medium')
+# left_col_rowFour, mid_col_rowFour, right_col_rowFour = st.columns(3, gap = 'medium')
     # Code block
     # result = "Code block executed"
     # st.write("Result:", result)
