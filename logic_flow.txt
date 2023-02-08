@@ -1,0 +1,34 @@
+title
+    |
+    |---how many types of machine states
+        |
+        |---2
+        |   |
+        |   |---NORMAL vs FAULTY
+        |   |---NORMAL, FAULTY, EXTREMELY_FAULTY  ------|
+        |                                               | 
+        |---specify sampling rate                       |
+        |---specify duration                            |
+                    |                                   |
+                    |                                   |
+                    |-----------------------------------|
+                                                        |
+                                                        |--- Saving files of each class
+                                                             |----Calculating
+                                                                   |----MFCC
+                                                                   |----MFE
+                                                                   |----Spectral Grating
+                                                                        |
+                                                                        |---Dimensionality reduction using:
+                                                                                |--- PCA
+                                                                                |--- tSNE
+                                                                                |----UMAP
+                                                                                        |
+                                                                                        |-- Visualization
+                                                                                                |---- 2D Scatter
+                                                                                                |---- 3D Scatter
+                                                                                
+                                                        |
+
+            
+
