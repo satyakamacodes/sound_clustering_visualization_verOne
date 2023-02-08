@@ -3,6 +3,7 @@ from audio_recorder_streamlit import audio_recorder
 from source import audio_signal_processing
 from source import lottie_animation
 from source import rand_no_gen
+from source import get_folder_vloume
 from streamlit_lottie import st_lottie
 
 import collections
@@ -152,15 +153,27 @@ with right_col_rowOne:
 
 count_no_of_wav_files = len([f for f in os.listdir('./recordings_two_class/') if f.endswith('.wav')]) + len([f for f in os.listdir('./recordings_three_class/') if f.endswith('.wav')])
 
-left_col_rowTwo, mid_col_rowTwo, right_col_rowTwo = st.columns(3, gap = 'medium')
+folder_paths = ['./recordings_two_class/', './recordings_three_class/']
+total_size = 0
+for folder_path in folder_paths:
+    total_size += get_folder_vloume.get_total_size(folder_path)
 
-with mid_col_rowTwo:
-    text = '<div style="background-color: black; border-radius: 10px; padding: 14px; border: 2px solid red; font-family:Roboto; color:white; font-size: 24px; text-align: center;">Number of files saved till date: <b>' + str(count_no_of_wav_files) + '</b> </div>'
+
+# This is ROW TWO
+left_col_rowTwo, first_mid_col_rowTwo, second_right_col_rowTwo, right_col_rowTwo = st.columns(4, gap = 'medium')
+
+with first_mid_col_rowTwo:
+    text = '<div style="background-color: black; border-radius: 10px; padding: 14px; border: 2px solid red; font-family:Roboto; color:white; font-size: 18px; text-align: center;">Total no. of files saved till date: <b>' + str(count_no_of_wav_files) + '</b> </div>'
+    st.markdown(text, unsafe_allow_html=True)
+with second_right_col_rowTwo:
+    text = '<div style="background-color: black; border-radius: 10px; padding: 14px; border: 2px solid red; font-family:Roboto; color:white; font-size: 16px; text-align: center;">Total volume (in MB) saved till date: <b>' + str(total_size) + '</b> </div>'
     st.markdown(text, unsafe_allow_html=True)
 
 
 
-# This is ROW TWO
+
+
+# This is ROW THREE
 if no_of_classes == 2:
 
     left_col_rowThree, right_col_rowThree = st.columns([1,3], gap = 'small')
